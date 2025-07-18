@@ -11,8 +11,8 @@ const getAllData = async()=>{
  return result;
 };
 
-const getDataByName = async(name)=>{
-const result = await ProductModel.findOne({PropertyName:name});
+const getDataById = async(id)=>{
+const result = await ProductModel.findById(id);
  return result;
 }
 
@@ -21,5 +21,5 @@ const deleteDataById = async(id)=>{
  return result;
 }
 module.exports = {
-    AddData,getAllData,getDataByName,deleteDataById
+    AddData,getAllData,getDataById,deleteDataById
 };

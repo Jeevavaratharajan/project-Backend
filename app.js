@@ -3,7 +3,9 @@ const express = require("express");
 const app = express();
 const Connect = require("./config/db");
 const ProductRouter = require("./router/ProductRouter");
+const Enquiryrouter = require("./router/EnquiryRouter");
 const cors = require("cors");
+const { config } = require("dotenv");
 port = process.env.PORT || 5000;
 
 
@@ -20,15 +22,16 @@ port = process.env.PORT || 5000;
   }
 })();
 
-app.use(cors({origin:"http://localhost:3000"}))
+app.use(cors({origin:"http://localhost:3002"}))
 
 app.use(express.json({limit:"10mb"}));
 
 
 app.use("/api/property",ProductRouter)
+app.use("/api/property",Enquiryrouter)
 
 app.listen(port, () => {
-  console.log(`Server is Running Successfully on port ${port}`);
+  console.log("Server is Running Successfully on http://localhost:"+port);
 });
 
 app.get("/", (req, res) => {

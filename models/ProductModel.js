@@ -3,10 +3,10 @@
     PropertyName:String,
     Location:String,
     Description:String,
-    PropertType:String,
+    PropertyType:String,
     Image:[String],
     Parking:Boolean,
-    PetsAllowed:Boolean,
+    Pets:Boolean,
     
 
  });

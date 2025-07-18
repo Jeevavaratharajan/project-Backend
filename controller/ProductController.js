@@ -1,4 +1,4 @@
-const { AddData, getAllData ,getDataByName,deleteDataById} = require("../server/ProductServer");
+const { AddData, getAllData ,getDataById,deleteDataById} = require("../server/ProductServer");
 
 const CreateData = async (req, res) => {
   try {
@@ -35,10 +35,10 @@ const getAllProperty = async (req, res) => {
   }
 };
 
-const getPropertyByName = async (req, res) => {
+const getPropertyById = async (req, res) => {
   try {
-    const name = req.params.name;
-    const data = await getDataByName(name);
+    const id = req.params.id;
+    const data = await getDataById(id);
     if (data) {
       res.status(200).json(data);
       console.log("Data Fetched successfully");
@@ -68,4 +68,4 @@ const deletePropertyById = async (req,res)=>{
     }
 }
 
-module.exports = { CreateData, getAllProperty,getPropertyByName,deletePropertyById };
+module.exports = { CreateData, getAllProperty,getPropertyById,deletePropertyById };
